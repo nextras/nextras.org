@@ -1,0 +1,127 @@
+.navbar-brand {
+	color: #000;
+	font-weight: bold;
+
+	span {
+		color: @blueDark;
+		font-size: 1.1em;
+	}
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.site-content.homepage, .addon-header {
+	background: darken(@blue, 10%);
+}
+
+.addon-header {
+	margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	a {
+		color: inherit;
+	}
+}
+
+.menu-components {
+	margin-top: 1.5em;
+
+	> li > ul {
+		> li:before {
+			content: '–';
+			position: relative;
+			left: -5px;
+		}
+
+		list-style: none;
+		background: #f3f3f3;
+
+		margin: 0 0 16px 0;
+		padding: 10px 0 10px 20px;
+	}
+}
+
+
+.site {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.site-content {
+	flex: 1;
+	-ms-flex-preferred-size: auto;
+}
+
+footer {
+	border-top: 1px solid #eee;
+	padding: 1em 0 3em;
+	font-size: 0.9em;
+}
+
+.fork-badge {
+	position: absolute;
+	top: 0;
+	right: 0;
+	border: 0;
+	z-index: 10000;
+}
+
+.sub-menu {
+	background: #f3f3f3;
+	border-radius: 4px;
+	padding: 1em;
+	margin-bottom: 1em;
+
+	> h3 { margin-top: 0; }
+
+	ul {
+		position: relative;
+
+		> li {
+			&:before {
+				content: '–';
+				position: absolute;
+				left: -18px;
+			}
+		}
+
+
+		h4 {
+			display: inline;
+		}
+
+		list-style: none;
+		margin: 0 0 0 18px;
+		padding: 0;
+	}
+
+	.versions {
+		margin: -0.5em 0 0.5em;
+
+		a {
+			background: #ddd;
+			font-size: 0.7em;
+			color: #444;
+			border-radius: 3px;
+			padding: 1px 4px;
+			margin-right: 5px;
+
+			&.active {
+				background: @blue;
+				color: white;
+			}
+		}
+	}
+}
+
+.content {
+	padding-bottom: 5em;
+
+	h2 {
+		margin-top: 0;
+	}
+}

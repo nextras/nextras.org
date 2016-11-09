@@ -1,0 +1,20 @@
+{block fork-badge}
+	{control nextrasComponent:forkBadge}
+{/block}
+
+{block addon-header}
+	{control nextrasComponent}
+{/block}
+
+{block content}
+
+	<div class="row">
+		<div class="col col-sm-9 content doc-content">
+			{ifset $chapter}
+				{$chapter|noEscape}
+			{else}
+				This component has not been documented yet.
+			{/ifset}
+		</div>
+		{control nextrasComponent:menu}
+	</div>

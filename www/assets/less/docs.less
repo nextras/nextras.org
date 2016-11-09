@@ -1,0 +1,79 @@
+.note {
+	background: #F3F3F3;
+	border-radius: 0.3em;
+	padding: 1em 2em 1em 5em;
+	min-height: 4em;
+
+	&:before {
+		height: 100%;
+		display: block;
+		position: absolute;
+		margin-left: -1.6em;
+		margin-top: -0.25em;
+
+		content: "\e086";
+		font-size: 2em;
+		font-family: 'Glyphicons Halflings';
+		pointer-events: none;
+	}
+}
+
+.advice {
+	background: lighten(#F4E87C, 10%);
+	border-radius: 0.3em;
+	padding: 1em 2em 1em 5em;
+	min-height: 4em;
+
+	&:before {
+		height: 100%;
+		display: block;
+		position: absolute;
+		margin-left: -1.6em;
+		margin-top: -0.25em;
+
+		content: "\e123";
+		font-size: 2em;
+		font-family: 'Glyphicons Halflings';
+		pointer-events: none;
+	}
+}
+
+.doc-content {
+
+	table {
+		width: 100%;
+		margin: 0 0 @line-height-computed;
+		border-bottom: 2px solid #ccc;
+		border-top: 2px solid #ccc;
+
+		td, th {
+			padding: 1px 6px;
+			border-bottom: 1px solid #ddd;
+		}
+	}
+
+}
+
+code {
+	&:hover {
+		color: darken(@yellowDark, 15%);
+		background: lighten(@yellow, 40%);
+	}
+}
+
+pre {
+	code {
+		&:hover {
+			color: inherit !important;
+			background: none;
+		}
+	}
+}
+
+.tuts {
+	font-size: 0.8em;
+	margin-top: 1em;
+	p {
+		margin: 0;
+	}
+}

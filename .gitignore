@@ -1,0 +1,6 @@
+/composer.lock
+/node_modules
+/docs
+/satellites
+/www/assets/build
+/vendor

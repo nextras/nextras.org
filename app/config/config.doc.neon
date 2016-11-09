@@ -1,0 +1,7 @@
+parameters:
+	doc:
+		orm:
+			master: master
+			v1.0: 1.0
+		dbal:
+			master: master
