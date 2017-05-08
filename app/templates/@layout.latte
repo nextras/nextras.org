@@ -5,7 +5,8 @@
 	<meta name="description" content="Nextras components">
 	<title>{block title|striptags}Nextras components{/block}</title>
 
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,700italic,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i' rel='stylesheet'>
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i" rel="stylesheet">
 	<link rel="stylesheet" href="{$basePath}/assets/build/style.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
@@ -44,9 +45,9 @@
 		<ul class="nav navbar-nav">
 			<li><a n:href=":Docs:Browser: orm, version => NULL, chapter => NULL">Orm</a></li>
 			<li><a n:href=":Docs:Browser: dbal, version => NULL, chapter => NULL">Dbal</a></li>
+			<li><a n:href=":Docs:Browser: migrations, version => NULL, chapter => NULL">Migrations</a></li>
 			<li><a n:href=":Docs:Browser: datagrid, version => NULL, chapter => NULL">Datagrid</a></li>
 			<li><a n:href=":Docs:Browser: forms, version => NULL, chapter => NULL">Forms</a></li>
-			<li><a n:href=":Docs:Browser: migrations, version => NULL, chapter => NULL">Migrations</a></li>
 			<li class="dropdown">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">more <span class="caret"></span></a>
 				<ul class="dropdown-menu" role="menu">
@@ -65,6 +66,8 @@
 
 <div class="addon-header" n:if="$presenter->name !== Homepage">
 	{include addon-header}
+</div>
+<div class="homepage-header" n:if="$presenter->name === Homepage">
 </div>
 
 <div n:class="site-content, $presenter->name === Homepage ? homepage">
