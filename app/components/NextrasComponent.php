@@ -71,6 +71,8 @@ class NextrasComponent extends Control
 		}
 
 		list($this->template->addonName, $this->template->addonGitHub) = $this->data[$this->componentName];
+		$this->template->versions = $this->structure->getVersions();
+		$this->template->currentVersion = $this->version;
 		$this->template->render();
 	}
 
@@ -86,8 +88,6 @@ class NextrasComponent extends Control
 	public function renderMenu()
 	{
 		$this->template->componentMenu = $this->structure->getComponentMenu();
-		$this->template->versions = $this->structure->getVersions();
-		$this->template->currentVersion = $this->version;
 		$this->template->setFile(__DIR__ . '/NextrasComponent-menu.latte');
 		$this->template->render();
 	}

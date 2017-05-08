@@ -1,13 +1,6 @@
 <div class="col col-sm-3" n:if="$componentMenu">
 	<div class="sub-menu">
 		<h3>Documentation</h3>
-
-		<div class="versions">
-			{foreach $versions as $version}
-				<a href="{plink :Docs:Browser: version => $version}" n:class="$currentVersion === $version ? active">{$version}</a>
-			{/foreach}
-		</div>
-
 		{$componentMenu|noEscape}
 	</div>
 </div>

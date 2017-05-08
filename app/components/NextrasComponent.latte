@@ -4,6 +4,12 @@
 	<div class="addon-panel">
 		<h2><a href="{plink :Docs:Browser: chapter => NULL}">{$addonName}</a></h2>
 
+		<div class="versions">
+			{foreach $versions as $version}
+				<a href="{plink :Docs:Browser: version => $version}" n:class="$currentVersion === $version ? active">{$version}</a>
+			{/foreach}
+		</div>
+
 		<div class="code">
 			<a href="https://packagist.org/packages/{$addonGitHub}" title="Stable Version"><img src="https://poser.pugx.org/{$addonGitHub}/v/stable"></a>
 			<a href="https://codedoc.pub/{$addonGitHub}" title="Api Documentation"><img src="https://img.shields.io/badge/api-documentation-EBDB06.svg"></a>

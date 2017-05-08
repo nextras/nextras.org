@@ -24,6 +24,25 @@
 		text-align: right;
 		margin-top: 0.5em;
 	}
+
+	.versions {
+		display: inline-block;
+		margin: 0 0 0 1.5em;
+
+		a {
+			background: @blueDark;
+			font-size: 0.8em;
+			color: #eee;
+			border-radius: 2px;
+			padding: 1px 4px;
+			margin-right: 2px;
+
+			&.active {
+				background: @blue;
+				color: white;
+			}
+		}
+	}
 }
 
 .addon-menu {
