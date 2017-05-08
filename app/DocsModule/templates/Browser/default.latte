@@ -9,6 +9,7 @@
 {block content}
 
 	<div class="row">
+		{control nextrasComponent:menu}
 		<div class="col col-sm-9 content doc-content">
 			{ifset $chapter}
 				{$chapter|noEscape}
@@ -16,5 +17,4 @@
 				This component has not been documented yet.
 			{/ifset}
 		</div>
-		{control nextrasComponent:menu}
 	</div>
