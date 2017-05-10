@@ -7,17 +7,7 @@
 
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i' rel='stylesheet'>
 	<link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i" rel="stylesheet">
-	<link rel="stylesheet" href="{$basePath}/assets/build/style.css">
-
-	{if !empty($header)}
-		{include $header}
-	{/if}
-
-	<script>
-		$(function() {
-			$.nette.init();
-		});
-	</script>
+	<link rel="stylesheet" href="{$basePath}/assets/build/style.css?{=filemtime($appDir . '/../www/assets/build/style.css')}">
 </head>
 
 <body>
