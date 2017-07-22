@@ -105,7 +105,7 @@ class StructureService extends Object
 		$chapter = $this->chapter ?: 'default';
 
 		$file = $this->component . '/' . $this->version . '/' . $chapter;
-		if (!Strings::match($file, '#^\w+/(master|\d+\.\d+|\d+\.x)/[\w._-]+$#')) {
+		if (!Strings::match($file, '#^[\w-]+/(master|\d+\.\d+|\d+\.x)/[\w._-]+$#')) {
 			throw new BadRequestException($file);
 		}
 
