@@ -77,3 +77,17 @@ pre {
 		margin: 0;
 	}
 }
+
+h3, h4, h5, h6 {
+	.anchor {
+		display: none;
+	}
+	&:hover .anchor {
+		position: absolute;
+		display: inline-block;
+		opacity: 0.7;
+		margin-left: 5px;
+		margin-top: 1px;
+		font-size: 0.9em;
+	}
+}

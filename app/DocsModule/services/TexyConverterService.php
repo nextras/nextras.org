@@ -56,6 +56,7 @@ class TexyConverterService
 		$texy->addHandler('block', [$this, 'blockHandler']);
 		$texy->addHandler('phrase', [$this, 'phraseHandler']);
 		$texy->addHandler('newReference', [$this, 'newReferenceHandler']);
+		$texy->addHandler('heading', [$this, 'headingHandler']);
 		return $texy;
 	}
 
@@ -206,5 +207,21 @@ class TexyConverterService
 		$elPre->attrs['class'] = $lang ? 'src-' . $lang : NULL;
 		$elPre->create('code', $content);
 		return $elPre;
+	}
+
+
+	public function headingHandler(Texy\HandlerInvocation $invocation, $level, $content, Texy\Modifier $mod, $isSurrounded) {
+		/** @var Texy\HtmlElement $result */
+		$result = $invocation->proceed($level, $content, $mod, $isSurrounded);
+
+		if (((int) substr($result->getName(), 1)) > 2) {
+			$elAnchor = Texy\HtmlElement::el('a');
+			$elAnchor->attrs['href'] = '#toc-' . Strings::webalize($content);
+			$elAnchor->attrs['class'] = 'anchor';
+			$elAnchor->setText('#');
+			$result->add($elAnchor);
+		}
+
+		return $result;
 	}
 }
