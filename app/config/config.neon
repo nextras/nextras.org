@@ -1,7 +1,7 @@
 parameters:
 	doc:
-		orm: v1.0
-		dbal: v1.0
+		orm: v2.3
+		dbal: v2.1
 		migrations: v3.0
 		datagrid: v2.0
 		secured-links: master
