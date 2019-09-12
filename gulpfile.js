@@ -7,7 +7,7 @@ var watchMode = argv['watch'] || false;
 
 
 gulp.task('less', function() {
-	gulp.src('www/assets/less/style.less')
+	return gulp.src('www/assets/less/style.less')
 		.pipe(less())
 		.pipe(gulp.dest('www/assets/build/'));
 });
@@ -16,4 +16,4 @@ if (watchMode) {
 	gulp.watch('www/assets/**/*.less', ['less']);
 }
 
-gulp.task('default', ['less']);
+gulp.task('default', gulp.series('less'));
