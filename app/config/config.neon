@@ -20,4 +20,4 @@ services:
 	routerFactory: Nextras\Web\RouterFactory
 	router: @routerFactory::createRouter
 	- Nextras\Web\FetchDocService(%doc%)
-	- { class: Nextras\Web\FetchDocCommand, tags: [kdyby.console.command] }
+	- { class: Nextras\Web\FetchDocCommand, tags: [kdyby.console.command], inject: true }
