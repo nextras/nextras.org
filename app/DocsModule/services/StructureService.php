@@ -3,13 +3,15 @@
 namespace Nextras\Web;
 
 use Nette\Application\BadRequestException;
-use Nette\Object;
+use Nette\SmartObject;
 use Nette\Utils\Finder;
 use Nette\Utils\Strings;
 
 
-class StructureService extends Object
+class StructureService
 {
+	use SmartObject;
+
 	/** @var string */
 	private $root;
 

@@ -2,13 +2,15 @@
 
 namespace Nextras\Web;
 
-use Nette\Object;
+use Nette\SmartObject;
 use Nette\Utils\FileSystem;
 use Symfony\Component\Console\Output\OutputInterface;
 
 
-class FetchDocService extends Object
+class FetchDocService
 {
+	use SmartObject;
+
 	/** @var array */
 	private $config;
 
