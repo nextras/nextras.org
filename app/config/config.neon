@@ -1,3 +1,6 @@
+extensions:
+	contributte.console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+
 parameters:
 	doc:
 		orm: v2.3
@@ -18,7 +21,3 @@ services:
 	router: @routerFactory::createRouter
 	- Nextras\Web\FetchDocService(%doc%)
 	- { class: Nextras\Web\FetchDocCommand, tags: [kdyby.console.command] }
-
-
-extensions:
-	console: Kdyby\Console\DI\ConsoleExtension

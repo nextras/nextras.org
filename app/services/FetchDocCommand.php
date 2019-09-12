@@ -9,13 +9,15 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class FetchDocCommand extends Command
 {
+	static public $defaultName = 'doc:update';
+
 	/** @var FetchDocService @inject */
 	public $fetchDocService;
 
 
 	protected function configure()
 	{
-		$this->setName('doc:update')->setDescription('Fetch new doc');
+		$this->setDescription('Fetch new doc');
 	}
 
 
