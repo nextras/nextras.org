@@ -1,16 +1,21 @@
-.navbar-brand {
-	color: #000;
-	font-weight: bold;
-	font-family: @font-family-sans-serif;
+.logo {
+	text-indent: 10px;
+}
 
-	span {
-		color: @blueDark;
-		font-size: 1.1em;
-	}
+.logo::before {
+	display: block;
+	float: left;
+	content: "";
+	overflow: hidden;
+	background: url("../img/logo.svg");
+	width: 50px;
+	height: 50px;
+	margin-top: -14px;
 }
 
 .navbar {
 	margin-bottom: 0;
+	border-bottom: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
