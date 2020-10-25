@@ -3,6 +3,7 @@
 	border-radius: 0.3em;
 	padding: 1em 2em 1em 5em;
 	min-height: 4em;
+	margin: 0 0 (@line-height-computed / 2);
 
 	&:before {
 		display: block;
@@ -22,6 +23,7 @@
 	border-radius: 0.3em;
 	padding: 1em 2em 1em 5em;
 	min-height: 4em;
+	margin: 0 0 (@line-height-computed / 2);
 
 	&:before {
 		display: block;
@@ -60,7 +62,11 @@ code {
 }
 
 pre {
+	border-radius: 6px;
+
 	code {
+		font-variant-ligatures: none;
+
 		&:hover {
 			color: inherit !important;
 			background: none;
