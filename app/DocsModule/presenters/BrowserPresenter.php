@@ -47,6 +47,7 @@ class BrowserPresenter extends ComponentBasePresenter
 			$file = $structure->getChapterFile();
 			if (Strings::endsWith($file, '.texy')) {
 				$this->template->activeComponent = $structure->getActiveComponentKey();
+				$this->template->editLink = $structure->getEditLink();
 				$this->template->chapter = $structure->getChapter();
 			} else {
 				$this->sendResponse(new FileResponse($file));

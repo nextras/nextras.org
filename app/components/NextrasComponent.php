@@ -54,7 +54,14 @@ class NextrasComponent extends Control
 		$this->componentName = $componentName;
 		$this->version = $version;
 		$this->chapter = $chapter;
-		$this->structure = new StructureService(realpath(__DIR__ . '/../../docs'), $this->componentName, $this->version, $this->chapter);
+		$this->structure = new StructureService(
+			realpath(__DIR__ . '/../../docs'),
+			$this->componentName,
+			$this->version,
+			$this->chapter,
+			$this->data[$componentName][1],
+			$this->getVersionBranch()
+		);
 	}
 
 
@@ -64,7 +71,7 @@ class NextrasComponent extends Control
 
 		if ($this->version) {
 			$this->template->lastStableLabel = $this->version;
-			$this->template->lastStableRef = $this->version === 'master' ? 'master' : 'v' . $this->version;
+			$this->template->lastStableRef = $this->getVersionBranch();
 		} else {
 			$this->template->lastStableLabel = 'master';
 			$this->template->lastStableRef = 'master';
@@ -108,5 +115,11 @@ class NextrasComponent extends Control
 	public function getDocumentationVersions()
 	{
 		return $this->structure->getVersions();
+	}
+
+
+	private function getVersionBranch(): string
+	{
+		return $this->version === 'master' ? 'master' : 'v' . $this->version;
 	}
 }

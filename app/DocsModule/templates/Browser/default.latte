@@ -12,6 +12,8 @@
 		{control nextrasComponent:menu}
 		<div class="col col-sm-9 content doc-content">
 			{ifset $chapter}
+				<a href="{$editLink}" class="btn btn-default btn-sm pull-right">Edit&nbsp;&nbsp;<img src="{$basePath}/assets/img/github.svg" style="height: 20px; width: 20px; margin-top: -3px;"/></a>
+
 				{$chapter|noEscape}
 			{else}
 				This component has not been documented yet.

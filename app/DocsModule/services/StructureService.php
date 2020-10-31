@@ -27,14 +27,22 @@ class StructureService
 	/** @var string */
 	private $component;
 
+	/** @var string */
+	private $componentRepo;
 
-	public function __construct($root, $component, $version, $chapter)
+	/** @var string */
+	private $versionBranch;
+
+
+	public function __construct($root, $component, $version, $chapter, string $componentRepo, string $versionBranch)
 	{
 		$this->root = $root;
 		$this->component = $component;
 		$this->version = $version;
 		$this->chapter = $chapter;
 		$this->converter = new TexyConverterService($component, $this->version, $this->chapter);
+		$this->componentRepo = $componentRepo;
+		$this->versionBranch = $versionBranch;
 	}
 
 
@@ -95,6 +103,14 @@ class StructureService
 		$content = file_get_contents($this->getChapterFile());
 		list($html) = $this->converter->parse($content);
 		return $html;
+	}
+
+
+	public function getEditLink(): string
+	{
+		// https://github.com/nextras/orm/blob/master/doc/events.texy
+		$chapter = $this->chapter ?: 'default';
+		return "https://github.com/{$this->componentRepo}/blob/{$this->versionBranch}/doc/{$chapter}.texy";
 	}
 
 
