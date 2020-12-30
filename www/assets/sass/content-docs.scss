@@ -1,0 +1,175 @@
+.sub-menu {
+	> div {
+		margin-bottom: 1em;
+	}
+
+	> h3 {
+		margin-top: 0;
+	}
+
+	ul {
+		position: relative;
+
+		> li {
+			&:before {
+				content: '–';
+				position: absolute;
+				left: -18px;
+			}
+		}
+
+		list-style: none;
+		margin: 0 0 2em 18px;
+		padding: 0;
+	}
+
+	.h4 {
+		font-size: 1em;
+		margin-top: 2em;
+		margin-bottom: 0.3em;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.sub-menu {
+		border-bottom: 1px solid #eee;
+		margin-bottom: 1rem;
+
+		ul {
+			margin: 0;
+
+			> li {
+				float: left;
+				margin-right: 0.8em;
+				&:before {
+					content: "";
+				}
+				&:after {
+					content: "·";
+					margin-left: 0.8em;
+				}
+			}
+
+			@include clearfix()
+		}
+		.h4 {
+			margin-top: 0.5em;
+		}
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.sub-menu {
+		border-right: 1px solid #eee;
+
+		> div {
+			padding-right: 0.7em;
+		}
+	}
+
+	.doc-content {
+		padding-left: 1.5rem;
+	}
+}
+
+.note {
+	background: #F3F3F3;
+	border-radius: 0.3em;
+	padding: 1rem 2rem 1rem 5rem;
+	margin: 0 0 $paragraph-margin-bottom;
+
+	&:before {
+		display: block;
+		position: absolute;
+		margin-left: -3.5rem;
+		width: 2rem;
+		height: 2rem;
+		background: url("../img/info-circle-fill.svg");
+		background-size: cover;
+		pointer-events: none;
+		content: " ";
+	}
+
+	:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.advice {
+	background: lighten(#F4E87C, 10%);
+	border-radius: 0.3em;
+	padding: 1rem 2rem 1rem 5rem;
+	margin: 0 0 $paragraph-margin-bottom;
+
+	&:before {
+		display: block;
+		position: absolute;
+		margin-left: -3.5rem;
+		width: 2rem;
+		height: 2rem;
+		background-image: url("../img/bell-fill.svg");
+		background-size: cover;
+		pointer-events: none;
+		content: " ";
+	}
+
+	:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.doc-content {
+	table {
+		width: 100%;
+		margin: 0 0 $paragraph-margin-bottom;
+		border-bottom: 2px solid #ccc;
+		border-top: 2px solid #ccc;
+
+		td, th {
+			padding: 1px 6px;
+			border-bottom: 1px solid #ddd;
+		}
+	}
+}
+
+pre {
+	background: #f8f8f8;
+	padding: 1em;
+	border-radius: 0.5em;
+
+	> code {
+		background: none;
+		padding: 0;
+		border-radius: 0;
+		font-variant-ligatures: none;
+
+		&:hover {
+			color: inherit !important;
+			background: none;
+		}
+	}
+}
+
+.tuts {
+	font-size: 0.8em;
+	margin-top: 1em;
+
+	p {
+		margin: 0;
+	}
+}
+
+h3, h4, h5, h6 {
+	.anchor {
+		display: none;
+	}
+
+	&:hover .anchor {
+		position: absolute;
+		display: inline-block;
+		opacity: 0.7;
+		margin-left: 5px;
+		margin-top: 1px;
+		font-size: 0.9em;
+	}
+}

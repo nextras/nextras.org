@@ -1,61 +1,68 @@
-{block fork-badge}
-	<a href="https://github.com/nextras" class="fork-badge"><img src="{$basePath}/assets/img/forkme.png" alt="Fork me on GitHub"></a>
-{/block}
 {block content}
 
-<div class="row section-homepage">
-	<div class="col col-sm-4">
-		<a class="bulk" href="{link :Docs:Browser: orm}">
-			<h2>Orm</h2>
-			<p>Full featured and high-performance ORM.</p>
-		</a>
-	</div>
-	<div class="col col-sm-4">
-		<a class="bulk" href="{link :Docs:Browser: dbal}">
-			<h2>Dbal</h2>
-			<p>Fast & secure database abstraction layer.</p>
-		</a>
-	</div>
-	<div class="col col-sm-4">
-		<a class="bulk" href="{link :Docs:Browser: migrations}">
-			<h2>Migrations</h2>
-			<p>Secure and reliable migrations for Nextras, Doctrine or dibi.</p>
-		</a>
-	</div>
-	<div class="col col-sm-4">
-		<a class="bulk" href="{link :Docs:Browser: secured-links}">
-			<h2>SecuredLinks</h2>
-			<p>Secure Nette signals against CSRF with <em>@secure</em> annotation.</p>
-		</a>
-	</div>
-	<div class="col col-sm-4">
-		<a class="bulk" href="{link :Docs:Browser: datagrid}">
-			<h2>Datagrid</h2>
-			<p>Build custom grids with cell custom rendering in Latte.</p>
-		</a>
-	</div>
-	<div class="col col-sm-4">
-		<a class="bulk" href="{link :Docs:Browser: forms}">
-			<h2>Forms</h2>
-			<p>Nette form controls, renderers and form macro helpers.</p>
-		</a>
-	</div>
-	<div class="col col-sm-4">
-		<a class="bulk" href="{link :Docs:Browser: mail-panel}">
-			<h2>MailPanel</h2>
-			<p>Easily catch your emails into the Tracy bar.</p>
-		</a>
-	</div>
-	<div class="col col-sm-4">
-		<a class="bulk" href="{link :Docs:Browser: static-router}">
-			<h2>StaticRouter</h2>
-			<p>Fast Nette route for custom static routes.</p>
-		</a>
-	</div>
-	<div class="col col-sm-4">
-		<a class="bulk" href="{link :Docs:Browser: youtube-api}">
-			<h2>YoutubeApi</h2>
-			<p>Fetches image preview for YouTube video.</p>
-		</a>
-	</div>
-</div>
+    <div class="row section-homepage">
+        <div class="col-sm-4">
+            <a class="bulk" href="{link :Docs:Browser: orm}">
+                <h2>Orm</h2>
+                <p>Full featured and high-performance ORM.</p>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a class="bulk" href="{link :Docs:Browser: dbal}">
+                <h2>Dbal</h2>
+                <p>Fast & secure database abstraction layer.</p>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a class="bulk" href="{link :Docs:Browser: migrations}">
+                <h2>Migrations</h2>
+                <p>Secure and reliable migrations for Nextras Dbal, Doctrine or dibi.</p>
+            </a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <h5 class="deprecated">Nette components</h5>
+    <p class="deprecated">These components are not actively developed. Basic maintanance is provided.</p>
+    <div class="row section-homepage">
+        <div class="col-sm-4">
+            <a class="bulk" href="{link :Docs:Browser: secured-links}">
+                <h2>SecuredLinks</h2>
+                <p>Secure Nette signals against CSRF with <em>@secure</em> annotation.</p>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a class="bulk" href="{link :Docs:Browser: datagrid}">
+                <h2>Datagrid</h2>
+                <p>Build custom grids with cell custom rendering in Latte.</p>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a class="bulk" href="{link :Docs:Browser: forms}">
+                <h2>Forms</h2>
+                <p>Nette form controls, renderers and form macro helpers.</p>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a class="bulk" href="{link :Docs:Browser: mail-panel}">
+                <h2>MailPanel</h2>
+                <p>Easily catch your emails into the Tracy bar.</p>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a class="bulk" href="{link :Docs:Browser: static-router}">
+                <h2>StaticRouter</h2>
+                <p>Fast Nette route for custom static routes.</p>
+            </a>
+        </div>
+        <div class="col-sm-4">
+            <a class="bulk" href="{link :Docs:Browser: youtube-api}">
+                <h2>YoutubeApi</h2>
+                <p>Fetches image preview for YouTube video.</p>
+            </a>
+        </div>
+    </div>
+
+{/block}

@@ -84,14 +84,6 @@ class NextrasComponent extends Control
 	}
 
 
-	public function renderForkBadge()
-	{
-		list($this->template->addonName, $this->template->addonGitHub) = $this->data[$this->componentName];
-		$this->template->setFile(__DIR__ . '/NextrasComponent-forkBadge.latte');
-		$this->template->render();
-	}
-
-
 	public function renderMenu()
 	{
 		$this->template->componentMenu = $this->structure->getComponentMenu();

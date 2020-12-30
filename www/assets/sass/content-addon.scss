@@ -1,5 +1,5 @@
 .addon-header {
-	background: @blue;
+	background: $blue;
 }
 
 .addon-header {
@@ -10,24 +10,21 @@
 	padding: 1em 0;
 	color: #fff;
 
-	h2 {
-		display: inline;
-	}
-
 	a {
 		color: #fff;
 		text-decoration: none;
 	}
 
+	h2 {
+		margin: 0 1em 0 0;
+	}
+
 	.code {
-		float: right;
-		text-align: right;
-		margin-top: 0.5em;
+		margin: 0.4em 0;
 	}
 
 	.versions {
-		display: inline-block;
-		margin: 0 0 0 1.5em;
+		margin: 0.4em 0;
 
 		a {
 			background: rgba(255, 255, 255, 0.1);
@@ -45,13 +42,10 @@
 	}
 }
 
-.addon-menu {
-	> ul > li {
-		margin-bottom: 1em;
-	}
-
-	small {
-		display: block;
-		line-height: @line-height-base;
+@include media-breakpoint-up(sm) {
+	.addon-panel {
+		.versions {
+			text-align: right;
+		}
 	}
 }

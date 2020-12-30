@@ -1,7 +1,3 @@
-{block fork-badge}
-	{control nextrasComponent:forkBadge}
-{/block}
-
 {block addon-header}
 	{control nextrasComponent}
 {/block}
@@ -10,9 +6,12 @@
 
 	<div class="row">
 		{control nextrasComponent:menu}
-		<div class="col col-sm-9 content doc-content">
+		<div class="col-sm-9 content doc-content">
 			{ifset $chapter}
-				<a href="{$editLink}" class="btn btn-default btn-sm pull-right">Edit&nbsp;&nbsp;<img src="{$basePath}/assets/img/github.svg" style="height: 20px; width: 20px; margin-top: -3px;"/></a>
+				<a href="{$editLink}" class="btn btn-outline-secondary btn-sm float-end">
+					Edit
+					<img src="{$basePath}/assets/img/github.svg" style="margin-top:-4px; margin-left:3px; width:20px; height:20px;">
+				</a>
 
 				{$chapter|noEscape}
 			{else}

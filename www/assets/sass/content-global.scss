@@ -1,0 +1,10 @@
+code {
+	padding: 2px 4px;
+	background-color: white;
+	border-radius: 6px;
+
+	&:hover {
+		color: darken($nx-yellow, 15%);
+		background: lighten($nx-yellow, 40%);
+	}
+}

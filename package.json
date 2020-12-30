@@ -1,10 +1,10 @@
 {
 	"private": true,
-	"dependencies": {
-		"gulp": "~4.0.2",
-		"minimist": "~1.2.3",
-		"gulp-less": "~4.0.1",
-		"gulp-watch": "~5.0.0",
-		"less": "~3.10.3"
+	"devDependencies": {
+		"bootstrap": "^5.0.0-beta1"
+	},
+	"scripts": {
+		"dev": "sass --watch ./www/assets/sass/index.scss ./www/assets/build/index.css",
+		"prod": "sass ./www/assets/sass/index.scss ./www/assets/build/index.css"
 	}
 }

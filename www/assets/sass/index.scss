@@ -1,0 +1,22 @@
+$nx-blue: #364D79;
+$nx-yellow: #FFCC00;
+$nx-violet: #7474BF;
+
+$yellow: $nx-yellow;
+$blue: $nx-blue;
+$primary: $nx-blue;
+
+$font-family-base: 'Merriweather', serif;
+$font-family-code: 'Fira Code', Menlo, Monaco, Consolas, "Courier New", monospace;
+
+$headings-font-weight: 800;
+$code-color: #555;
+
+@import "./../../../node_modules/bootstrap/scss/bootstrap";
+
+@import "content-addon";
+@import "content-docs";
+@import "content-global";
+@import "content-fshl";
+@import "content-homepage";
+@import "content-layout";

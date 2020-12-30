@@ -1,0 +1,16 @@
+footer {
+	border-top: 1px solid #eee;
+	padding: 1em 0 3em;
+	font-size: 0.9em;
+}
+
+.site {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+.site-content {
+	flex: 1;
+	-ms-flex-preferred-size: auto;
+}

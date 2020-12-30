@@ -1,15 +1,13 @@
-.intro-box {
-	color: white;
-
-	h1 { margin-bottom: 0; color: @yellow; }
-	h2 { margin-top: 0; }
-	h4 { margin-top: 1.6em; margin-bottom: 0; }
-	p {  }
+.homepage-header {
+	background: $blue;
+	min-height: 5px;
+	font-size: $font-size-lg * 1.4;
+	color: $white;
+	padding: 2rem 0;
 }
 
 .section-homepage {
 	margin-top: 3em;
-	margin-bottom: 2em;
 
 	.bulk {
 		display: block;
@@ -29,7 +27,6 @@
 	}
 }
 
-.homepage-header {
-	background: @blue;
-	height: 5px;
+.deprecated {
+	color: $gray-700;
 }

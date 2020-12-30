@@ -1,71 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Nextras components">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{block title|striptags}Nextras components{/block}</title>
-
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="{$basePath}/assets/build/style.css?{=filemtime($appDir . '/../www/assets/build/style.css')}">
+	<link rel="stylesheet" href="{$basePath}/assets/build/index.css?{=filemtime($appDir . '/../www/assets/build/index.css')}">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
 </head>
 
 <body>
-{block fork-badge}{/block}
-
 <div class="site">
 
-<header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
-<div class="container">
-	<div class="navbar-header">
-		<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-		</button>
-		<a n:href=":Homepage:" class="logo navbar-brand">Nextras</a>
-	</div>
-	<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
-		<ul class="nav navbar-nav">
-			<li><a href="https://blog.nextras.org">Blog</a></li>
-			<li><a href="https://github.com/nextras">GitHub</a></li>
-			<li><a href="https://packagist.org/packages/nextras">Packagist</a></li>
-		</ul>
+	<nav class="navbar navbar-expand-lg navbar-light" id="top">
+		<div class="container">
+			<a class="navbar-brand logo" n:href=":Homepage:">Nextras</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link" href="https://blog.nextras.org">Blog</a></li>
+					<li class="nav-item"><a class="nav-link" href="https://github.com/nextras">GitHub</a></li>
+					<li class="nav-item"><a class="nav-link" href="https://packagist.org/packages/nextras">Packagist</a></li>
+				</ul>
+			</div>
+		</div>
 	</nav>
-</div>
-</header>
 
-<div class="addon-header" n:if="$presenter->name !== Homepage">
-	{include addon-header}
-</div>
-<div class="homepage-header" n:if="$presenter->name === Homepage">
-</div>
+	<div class="addon-header" n:if="$presenter->name !== Homepage">
+		{include addon-header}
+	</div>
 
-<div n:class="site-content, $presenter->name === Homepage ? homepage">
-<div class="container">
-		<div class="row">
-			<div class="col col-sm-12" n:snippet="flashes">
-				<div n:foreach="$flashes as $flash" class="alert alert-info">{$flash->message}</div>
-			</div>
-			<div class="col col-sm-12">
-				{include #content}
+	<div class="homepage-header" n:if="$presenter->name === Homepage">
+		<div class="container">
+			<div class="row">
+				<div class="col" style="text-align: center">
+					<img src="{$basePath}/assets/img/logo.svg" style="max-width: 150px;"><br>
+					Orm · Dbal · Migrations<br>
+					<small>a database stack 🗄️</small>
+				</div>
 			</div>
 		</div>
-</div>
-</div>
+	</div>
 
-<footer>
-	<div class="container">
-	<div class="row">
-		<div class="col col-sm-12">
-			This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
-			<br>Nextras community &copy; 2013, {=date('Y')}
+	<div n:class="site-content, $presenter->name === Homepage ? homepage">
+		<div class="container">
+				<div class="row">
+					<div class="col-sm" n:snippet="flashes">
+						<div n:foreach="$flashes as $flash" class="alert alert-info">{$flash->message}</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-sm">
+						{include #content}
+					</div>
+				</div>
 		</div>
 	</div>
-	</div>
-</footer>
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm">
+					This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+					<br>Nextras community &copy; 2013, {=date('Y')}
+				</div>
+			</div>
+		</div>
+	</footer>
 
 </div>
-
 </body>
 </html>
