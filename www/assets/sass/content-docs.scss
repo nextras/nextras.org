@@ -44,8 +44,10 @@
 				&:before {
 					content: "";
 				}
-				&:after {
+				&:not(:last-child):after {
 					content: "·";
+				}
+				&:after {
 					margin-left: 0.8em;
 				}
 			}
