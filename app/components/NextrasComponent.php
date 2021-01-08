@@ -31,8 +31,6 @@ class NextrasComponent extends Control
 	 */
 	public function __construct($componentName, $version = NULL , $chapter = NULL)
 	{
-		parent::__construct();
-
 		$this->data = [
 			'orm'           => ['Orm',          'nextras/orm'],
 			'dbal'          => ['Dbal',         'nextras/dbal'],

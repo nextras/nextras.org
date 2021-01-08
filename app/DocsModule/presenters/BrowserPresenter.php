@@ -28,7 +28,7 @@ class BrowserPresenter extends ComponentBasePresenter
 		if (empty($this->version)) {
 			$defaultVersion = $structure->getComponentDefaultVersion();
 			if ($defaultVersion) {
-				$this->redirect(IResponse::S302_FOUND, 'this', ['version' => $defaultVersion]);
+				$this->redirect('this', ['version' => $defaultVersion]);
 			} else {
 				$this->missing = TRUE;
 			}
