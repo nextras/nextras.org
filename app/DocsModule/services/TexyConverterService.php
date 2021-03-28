@@ -36,12 +36,11 @@ class TexyConverterService
 		$texy->linkModule->root = '';
 		$texy->alignClasses['left'] = 'left';
 		$texy->alignClasses['right'] = 'right';
-		$texy->emoticonModule->class = 'smiley';
 		$texy->headingModule->top = 2;
+		$texy->headingModule->balancing = Texy\Modules\HeadingModule::FIXED;
 		$texy->headingModule->generateID = TRUE;
 		$texy->tabWidth = 4;
 		$texy->typographyModule->locale = 'en';
-		$texy->tableModule->evenClass = 'alt';
 		$texy->dtd['body'][1]['style'] = TRUE;
 		$texy->allowed['longwords'] = FALSE;
 		$texy->allowed['block/html'] = FALSE;

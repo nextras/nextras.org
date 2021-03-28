@@ -1,7 +1,7 @@
 {
 	"private": true,
 	"devDependencies": {
-		"bootstrap": "^5.0.0-beta1"
+		"bootstrap": "^5.0.0-beta3"
 	},
 	"scripts": {
 		"dev": "sass --watch ./www/assets/sass/index.scss ./www/assets/build/index.css",
