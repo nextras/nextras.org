@@ -17,6 +17,15 @@ application:
 		*: Nextras\Web\*\*Presenter
 
 services:
+	- Nextras\Web\Docs\TexyFactory
+	- Nextras\Web\Docs\CommonMarkFactory
+	-
+		factory: @Nextras\Web\Docs\TexyFactory::create
+		type: Texy\Texy
+	-
+		factory: @Nextras\Web\Docs\CommonMarkFactory::create
+		type: League\CommonMark\MarkdownConverter
+	- Nextras\Web\Docs\DocumentationService
 	routerFactory: Nextras\Web\RouterFactory
 	router: @routerFactory::createRouter
 	- Nextras\Web\FetchDocService(%doc%)

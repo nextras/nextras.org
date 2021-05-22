@@ -1,63 +1,60 @@
-<?php
+<?php declare(strict_types = 1);
 
 namespace Nextras\Web\Docs;
 
+use Nette\Application\Attributes\Persistent;
 use Nette\Application\Responses\FileResponse;
-use Nette\Http\IResponse;
-use Nette\Utils\Strings;
-use Nextras\Web\ComponentBasePresenter;
-use Nextras\Web\NextrasComponent;
+use Nette\DI\Attributes\Inject;
+use Nette\DI\Container;
+use Nextras\Web\BasePresenter;
 
 
-class BrowserPresenter extends ComponentBasePresenter
+/**
+ * @property BrowserTemplate $template
+ */
+class BrowserPresenter extends BasePresenter
 {
-	/** @persistent @var string */
-	public $version;
+	#[Persistent]
+	public string $component;
 
-	/** @persistent @var string */
-	public $chapter = 'default';
+	#[Persistent]
+	public ?string $version = null;
 
-	/** @var bool */
-	private $missing = FALSE;
+	#[Persistent]
+	public string $chapter = "default";
+
+	#[Inject]
+	public DocumentationService $documentationService;
+
+	#[Inject]
+	public Container $container;
+
+	private TextPage $page;
 
 
-	public function actionDefault($component)
+	public function actionDefault(string $component, string $chapter = "default")
 	{
-		$structure = $this['nextrasComponent']->getStructure();
-
-		if (empty($this->version)) {
-			$defaultVersion = $structure->getComponentDefaultVersion();
-			if ($defaultVersion) {
-				$this->redirect('this', ['version' => $defaultVersion]);
-			} else {
-				$this->missing = TRUE;
-			}
-		} else {
-			if (!$structure->pageExists()) {
-				$this->error();
-			}
+		$page = $this->documentationService->get($this->component, $this->version, $this->chapter);
+		if ($page === null) {
+			$this->error();
 		}
+
+		$this->version = $page->getVersion();
+
+		if ($page instanceof MediaFile) {
+			$this->sendResponse(new FileResponse($page->getFileName()));
+		}
+
+		assert($page instanceof TextPage);
+		$this->page = $page;
 	}
 
 
 	public function renderDefault()
 	{
-		if (!$this->missing) {
-			$structure = $this['nextrasComponent']->getStructure();
-			$file = $structure->getChapterFile();
-			if (Strings::endsWith($file, '.texy')) {
-				$this->template->activeComponent = $structure->getActiveComponentKey();
-				$this->template->editLink = $structure->getEditLink();
-				$this->template->chapter = $structure->getChapter();
-			} else {
-				$this->sendResponse(new FileResponse($file));
-			}
-		}
-	}
-
-
-	protected function createComponentNextrasComponent()
-	{
-		return new NextrasComponent($this->component, $this->version, $this->chapter);
+		$this->template->container = $this->container;
+		$this->template->chapter = $this->page;
+		$this->template->menu = $this->documentationService->get($this->component, $this->version, "menu");
+		$this->template->versions = $this->documentationService->getVersions($this->component);
 	}
 }

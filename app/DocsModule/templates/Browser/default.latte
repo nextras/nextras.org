@@ -1,21 +1,65 @@
+{templateType Nextras\Web\Docs\BrowserTemplate}
+
 {block addon-header}
-	{control nextrasComponent}
+	<div class="container">
+		<div class="row">
+			<div class="col-sm clearfix">
+				<div class="addon-panel">
+					<div class="row">
+						<div class="col-sm-auto">
+							<h2><a href="{plink :Docs:Browser: chapter => NULL}">{$chapter->packageName}</a></h2>
+						</div>
+						<div class="col-sm">
+							<div class="code">
+								<a href="https://github.com/{$chapter->packageRepoSlug}"><img src="https://img.shields.io/badge/GitHub-{$chapter->packageRepoSlug|replace:"-","--"}-%23ffffff"></a>
+								<a
+										href="https://github.com/{$chapter->packageRepoSlug}/releases"
+										title="Stable Version"><img src="https://img.shields.io/github/v/release/{$chapter->packageRepoSlug}"></a>
+								<a
+										href="https://packagist.org/packages/{$chapter->packageRepoSlug}"
+										title="Downloads"><img src="https://img.shields.io/packagist/dm/{$chapter->packageRepoSlug}.svg?style=flat"></a>
+							</div>
+						</div>
+						<div class="col-sm-auto">
+							<div class="versions">
+								{foreach $versions as $version}
+									<a href="{plink :Docs:Browser: version => $version}" n:class="$chapter->getVersion() === $version ? active">{$version}</a>
+								{/foreach}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 {/block}
 
 {block content}
 
 	<div class="row">
-		{control nextrasComponent:menu}
+		{if $menu !== null}
+			<div class="col-sm-3 sub-menu">
+				<div>
+					<h4>Documentation</h4>
+					{$menu->getContent()|parse:$menu->getType()}
+				</div>
+			</div>
+		{/if}
 		<div class="col-sm-9 content doc-content">
-			{ifset $chapter}
-				<a href="{$editLink}" class="btn btn-outline-secondary btn-sm float-end">
+			{if $chapter !== null}
+				<a href="{$chapter->getEditLink()}" class="btn btn-outline-secondary btn-sm float-end">
 					Edit
-					<img src="{$basePath}/assets/img/github.svg" style="margin-top:-4px; margin-left:3px; width:20px; height:20px;">
+					<img
+							src="{$basePath}/assets/img/github.svg"
+							style="margin-top:-4px; margin-left:3px; width:20px; height:20px;">
 				</a>
-
-				{$chapter|noEscape}
+				{*				{cache $chapter->getCacheKey()}*}
+				{$chapter->getContent()|parse:$chapter->getType()}
+				{*				{/cache}*}
 			{else}
 				This component has not been documented yet.
-			{/ifset}
+			{/if}
 		</div>
 	</div>
+
+{/block}

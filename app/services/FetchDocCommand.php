@@ -24,5 +24,6 @@ class FetchDocCommand extends Command
 	protected function execute(InputInterface $input, OutputInterface $output)
 	{
 		$this->fetchDocService->fetch($output);
+		return 0;
 	}
 }

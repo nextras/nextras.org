@@ -1,15 +1,16 @@
 $nx-blue: #364D79;
 $nx-yellow: #FFCC00;
+$nx-yellow-light: #f5f0e2;
 $nx-violet: #7474BF;
 
 $yellow: $nx-yellow;
 $blue: $nx-blue;
 $primary: $nx-blue;
 
-$font-family-base: 'Merriweather', serif;
-$font-family-code: 'Fira Code', Menlo, Monaco, Consolas, "Courier New", monospace;
+$font-family-base: -apple-system,BlinkMacSystemFont,"Segoe UI","Liberation Sans",sans-serif;
+$font-family-code: Menlo, Monaco, Consolas, "Courier New", monospace;
 
-$headings-font-weight: 800;
+$headings-font-weight: 700;
 $code-color: #555;
 
 @import "./../../../node_modules/bootstrap/scss/bootstrap";

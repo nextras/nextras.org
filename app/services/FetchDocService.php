@@ -54,14 +54,14 @@ class FetchDocService
 		}, $out);
 
 		$out = array_filter($out, function (string $line) {
-			return preg_match('#^(v\d+\.\d+|master)$#', $line) === 1;
+			return preg_match('#^(v\d+\.\d+|master|main)$#', $line) === 1;
 		});
 		$out = array_filter($out, function (string $line) use ($minVersion) {
-			return $line === 'master' || substr($line, 1) >= substr($minVersion, 1);
+			return $line === 'master' || $line === 'main' || substr($line, 1) >= substr($minVersion, 1);
 		});
 		$out = array_combine($out, $out);
 		$out = array_map(function (string $line) {
-			return $line === 'master' ? $line : substr($line, 1);
+			return $line === 'master' || $line === 'main' ? $line : substr($line, 1);
 		}, $out);
 		return $out;
 	}
@@ -91,17 +91,25 @@ class FetchDocService
 		chdir($dir);
 		exec('git checkout origin/' . $versionRef);
 
-		$source = $dir . '/doc';
 		$target = $this->docDir . '/' . $name . '/' . $versionName;
+
+		$source = $dir . '/doc';
+		if (file_exists($source)) {
+			$target .= '/doc';
+		} else {
+			$source .= 's';
+			$target .= '/docs';
+			if (!file_exists($source)) {
+				$output->writeln('<error>Doc source ' . $source . ' does not exist.</error>');
+				return;
+			}
+		}
+
 		if (is_dir($target)) {
 			FileSystem::delete($target);
 		}
 
 		@mkdir($target);
-		if (!file_exists($source)) {
-			$output->writeln('<error>Doc source ' . $source . ' does not exist.</error>');
-			return;
-		}
 		FileSystem::copy($source, $target);
 	}
 }
