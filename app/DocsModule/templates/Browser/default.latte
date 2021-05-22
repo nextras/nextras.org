@@ -1,5 +1,9 @@
 {templateType Nextras\Web\Docs\BrowserTemplate}
 
+{block title}
+	{$title} &ndash; {$chapter->packageName} ({$chapter->getVersion()})
+{/block}
+
 {block addon-header}
 	<div class="container">
 		<div class="row">
@@ -37,11 +41,11 @@
 {block content}
 
 	<div class="row">
-		{if $menu !== null}
+		{if $menuContent !== null}
 			<div class="col-sm-3 sub-menu">
 				<div>
 					<h4>Documentation</h4>
-					{$menu->getContent()|parse:$menu->getType()}
+					{$menuContent|noescape}
 				</div>
 			</div>
 		{/if}
@@ -54,7 +58,7 @@
 							style="margin-top:-4px; margin-left:3px; width:20px; height:20px;">
 				</a>
 				{*				{cache $chapter->getCacheKey()}*}
-				{$chapter->getContent()|parse:$chapter->getType()}
+				{$content|noescape}
 				{*				{/cache}*}
 			{else}
 				This component has not been documented yet.
