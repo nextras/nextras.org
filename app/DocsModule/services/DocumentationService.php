@@ -82,7 +82,7 @@ class DocumentationService
 			}
 
 			$versionBranch = $version !== 'main' && $version !== 'master' ? "v$version" : $version;
-			$editLink = "https://github.com/nextras/$component/blob/$versionBranch/$fileName";
+			$editLink = "https://github.com/nextras/$component/blob/$versionBranch/$fileName?plain=1";
 			$packageName = str_replace('-', ' ', Strings::capitalize($component));
 			$packageRepoSlug = "nextras/$component";
 
