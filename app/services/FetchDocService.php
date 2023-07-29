@@ -47,6 +47,7 @@ class FetchDocService
 	private function getVersions(string $name, string $minVersion)
 	{
 		$dir = $this->satelliteDir . '/' . $name;
+		exec("cd $dir && git fetch --prune");
 		exec("cd $dir && git branch -r", $out);
 		$out = array_map('trim', $out);
 		$out = array_map(function (string $line) {
