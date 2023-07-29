@@ -154,16 +154,16 @@
 }
 
 pre {
-	//background: #f8f8f8;
-	border: 1px dotted #aaa;
-	padding: 1em;
+	background: lighten($nx-yellow-light, 4%);
+	padding: 1.3em;
 	border-radius: 0.5em;
+	font-size: 0.85em;
+	line-height: 1.55;
 
 	> code {
 		background: none;
 		padding: 0;
 		border-radius: 0;
-		font-variant-ligatures: none;
 
 		&:hover {
 			color: inherit !important;
