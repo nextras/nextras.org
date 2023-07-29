@@ -46,7 +46,7 @@ class DocumentationService
 	{
 		$chapter = $chapter ?? "default";
 
-		if (Strings::match($component, /** @lang PhpRegExp */ '#^[a-zA-Z0-9_-]+$#') == null) {
+		if (Strings::match($component, '#^[a-zA-Z0-9_-]+$#') == null) {
 			return null;
 		}
 
