@@ -7,7 +7,7 @@ parameters:
 		dbal: v3.0
 		migrations: v3.0
 		datagrid: v2.0
-		secured-links: master
+		secured-links: main
 
 php:
 	date.timezone: Europe/Prague
