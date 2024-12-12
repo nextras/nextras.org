@@ -15,13 +15,13 @@ class FetchDocCommand extends Command
 	public $fetchDocService;
 
 
-	protected function configure()
+	protected function configure(): void
 	{
 		$this->setDescription('Fetch new doc');
 	}
 
 
-	protected function execute(InputInterface $input, OutputInterface $output)
+	protected function execute(InputInterface $input, OutputInterface $output): int
 	{
 		$this->fetchDocService->fetch($output);
 		return 0;
