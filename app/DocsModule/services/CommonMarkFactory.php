@@ -21,6 +21,7 @@ class CommonMarkFactory
 			[
 				'heading_permalink' => [
 					'min_heading_level' => 3,
+					'fragment_prefix' => '',
 					'html_class' => 'anchor',
 					'insert' => 'after',
 					'title' => 'Permalink',
