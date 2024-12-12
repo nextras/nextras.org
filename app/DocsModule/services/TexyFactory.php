@@ -20,7 +20,6 @@ class TexyFactory
 		$texy->headingModule->generateID = true;
 		$texy->tabWidth = 4;
 		$texy->typographyModule->locale = 'en';
-		$texy->dtd['body'][1]['style'] = true;
 		$texy->allowed['longwords'] = false;
 		$texy->allowed['block/html'] = false;
 		$texy->imageModule->root = '';

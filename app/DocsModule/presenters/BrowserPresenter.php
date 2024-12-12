@@ -80,7 +80,7 @@ class BrowserPresenter extends BasePresenter
 			return [$output, $texy->headingModule->title];
 		} elseif ($page->getType()->is(ContentType::MARKDOWN)) {
 			$converter = $this->container->getByType(MarkdownConverter::class);
-			$parsed = $converter->convertToHtml($page->getContent());
+			$parsed = $converter->convert($page->getContent());
 			$heading = $parsed->getDocument()->firstChild()?->firstChild();
 			if ($heading instanceof Text) {
 				$title = $heading->getLiteral();
