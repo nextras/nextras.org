@@ -1,4 +1,4 @@
-<?php declare(strict_types = 1);
+<?php declare(strict_types=1);
 
 namespace Nextras\Web\Docs;
 
@@ -25,14 +25,16 @@ class CommonMarkFactory
 					'insert' => 'after',
 					'title' => 'Permalink',
 					'symbol' => '#',
-					'slug_normalizer' => new class implements TextNormalizerInterface {
+				],
+				'slug_normalizer' => [
+					'instance' => new class implements TextNormalizerInterface {
 						public function normalize(string $text, $context = null): string
 						{
 							return 'toc-' . Strings::webalize($text);
 						}
 					},
 				],
-			]
+			],
 		);
 		$environment->addExtension(new CommonMarkCoreExtension());
 		$environment->addExtension(new HeadingPermalinkExtension());
