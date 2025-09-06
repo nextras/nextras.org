@@ -7,7 +7,7 @@ use Nette\Application\UI\Presenter;
 
 abstract class BasePresenter extends Presenter
 {
-	public $invalidLinkMode = self::INVALID_LINK_EXCEPTION;
+	public int $invalidLinkMode = self::InvalidLinkException;
 
 
 	protected function beforeRender(): void
