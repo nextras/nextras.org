@@ -91,7 +91,7 @@ class DocumentationService
 					file: $file,
 					version: $version,
 					editLink: $editLink,
-					type: ContentType::MARKDOWN(),
+					type: ContentType::MARKDOWN,
 					packageName: $packageName,
 					packageRepoSlug: $packageRepoSlug,
 				);
@@ -100,7 +100,7 @@ class DocumentationService
 					file: $file,
 					version: $version,
 					editLink: $editLink,
-					type: ContentType::TEXY(),
+					type: ContentType::TEXY,
 					packageName: $packageName,
 					packageRepoSlug: $packageRepoSlug,
 				);

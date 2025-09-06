@@ -74,11 +74,11 @@ class BrowserPresenter extends BasePresenter
 	 */
 	private function parse(TextPage $page): array
 	{
-		if ($page->getType()->is(ContentType::TEXY)) {
+		if ($page->getType() == ContentType::TEXY) {
 			$texy = $this->container->getByType(\Texy::class);
 			$output = $texy->process($page->getContent());
 			return [$output, $texy->headingModule->title];
-		} elseif ($page->getType()->is(ContentType::MARKDOWN)) {
+		} elseif ($page->getType() == ContentType::MARKDOWN) {
 			$converter = $this->container->getByType(MarkdownConverter::class);
 			$parsed = $converter->convert($page->getContent());
 			$heading = $parsed->getDocument()->firstChild()?->firstChild();

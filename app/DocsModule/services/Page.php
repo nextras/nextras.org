@@ -2,7 +2,6 @@
 
 namespace Nextras\Web\Docs;
 
-use MabeEnum\Enum;
 use Nette\Utils\FileSystem;
 
 
@@ -80,8 +79,8 @@ class TextPage implements Page
 }
 
 
-class ContentType extends Enum
+enum ContentType : string
 {
-	const TEXY = 'texy';
-	const MARKDOWN = 'markdown';
+	case TEXY = 'texy';
+	case MARKDOWN = 'markdown';
 }

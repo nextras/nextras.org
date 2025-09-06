@@ -3,19 +3,17 @@
 		"MIT"
 	],
 	"require": {
-		"php": "~8.0",
-		"contributte/console": "~0.9",
-		"nette/application": "~3.1",
-		"nette/bootstrap": "~3.1",
-		"nette/caching": "~3.1",
-		"nette/di": "~3.0",
-		"nette/robot-loader": "~3.2",
-		"nette/utils": "~3.2",
-		"latte/latte": "~2.10",
-		"tracy/tracy": "~2.8",
-		"texy/texy": "~3.1",
+		"php": "~8.4",
+		"contributte/console": "~0.10",
+		"nette/application": "~3.2",
+		"nette/bootstrap": "~3.2",
+		"nette/caching": "~3.2",
+		"nette/di": "~3.1",
+		"nette/utils": "~4.0",
+		"latte/latte": "~3.0",
+		"tracy/tracy": "~2.10",
+		"texy/texy": "~3.2",
 		"kukulich/fshl": "~2.1",
-		"league/commonmark": "2.6.0",
-		"marc-mabe/php-enum": "~4.4"
+		"league/commonmark": "~2.7"
 	}
 }
